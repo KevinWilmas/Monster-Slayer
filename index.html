@@ -15,19 +15,25 @@
   </head>
   <body>
     <header>
-      <h1>Monster Slayer</h1>
+      <h1 class="monster-slayer-title">
+        M<img
+          src="../Monster_Slayer_Image.png"
+          alt="Monster Slayer Eye"
+          class="monster-eye"
+        />o nster Slayer
+      </h1>
     </header>
     <div id="game">
       <section id="monster" class="container">
         <h2>Monster Health</h2>
         <div class="healthbar">
-          <div class="healthbar__value" :style="monsterBarStyles"></div>
+          <div class="healthbar__value_monster" :style="monsterBarStyles"></div>
         </div>
       </section>
       <section id="player" class="container">
         <h2>Your Health</h2>
         <div class="healthbar">
-          <div class="healthbar__value" :style="playerBarStyles"></div>
+          <div class="healthbar__value_player" :style="playerBarStyles"></div>
         </div>
       </section>
       <section class="container" v-if="winner">
@@ -38,12 +44,16 @@
         <button @click="startGame">Start New Game</button>
       </section>
       <section id="controls" v-else>
-        <button @click="attackMonster">ATTACK</button>
-        <button :disabled="mayUseSpecialAttack" @click="specialAttackMonster">
+        <button @click="attackMonster" class="button-attack">ATTACK</button>
+        <button
+          :disabled="mayUseSpecialAttack"
+          @click="specialAttackMonster"
+          class="button-attack"
+        >
           SPECIAL ATTACK
         </button>
-        <button @click="healPlayer">HEAL</button>
-        <button @click="surrender">SURRENDER</button>
+        <button @click="healPlayer" class="button-heal">HEAL</button>
+        <button @click="surrender" class="button-surrender">SURRENDER</button>
       </section>
       <section id="log" class="container">
         <h2>Battle Log</h2>
