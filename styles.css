@@ -170,3 +170,11 @@ button:disabled {
   background-color: black;
   color: white;
 }
+
+.battlelog__text {
+  color: white;
+}
+
+#log {
+  background-color: black;
+}
